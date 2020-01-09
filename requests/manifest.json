@@ -5,12 +5,28 @@
   "name": "webRequest-demo",
   "version": "1.0",
 
+  "browser_action": {
+    "default_title": "Favourite colour option"
+  },
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "<all_urls>"
+    "https://en.wikipedia.org/",
+    "<all_urls>",
+    "storage"
   ],
- 
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+
+  "applications": {
+    "gecko": {
+        "id": "favourite-colour-examples@mozilla.org",
+        "strict_min_version": "57.0a1"
+      }
+  },
+
   "background": {
     "scripts": ["background.js"]
   }
